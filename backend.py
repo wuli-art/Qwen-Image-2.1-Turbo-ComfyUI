@@ -138,7 +138,7 @@ def generate(pipeline, sigmas, prompt, width, height, seed, device, reference=No
     torch.cuda.synchronize(device)
     elapsed = time.perf_counter() - started
     images = torch.from_numpy(np.stack([
-        np.asarray(image.convert("RGB"), dtype=np.float32) / 255 for image in result.images
+        np.asarray(image.convert("RGBA"), dtype=np.float32) / 255 for image in result.images
     ]))
     metrics = {
         "inference_seconds": round(elapsed, 3),

@@ -30,7 +30,7 @@ class QwenImage21TurboGenerate:
     RETURN_NAMES = ("image", "performance")
     FUNCTION = "execute"
     CATEGORY = "Qwen Image 2.1 Turbo"
-    DESCRIPTION = "Select a variant to download automatically on first use. Cached files are reused. Optional local paths override downloads; IMAGE batch supplies references."
+    DESCRIPTION = "Select a variant to download automatically on first use. Cached files are reused. RGBA output preserves transparency when connected to Save Image. Optional local paths override downloads; IMAGE batch supplies references."
 
     def execute(self, model_path, prompt, width, height, seed, memory_mode, vae_tiling, reference=None, base_model_path="", variant="8step-fp8"):
         import folder_paths
